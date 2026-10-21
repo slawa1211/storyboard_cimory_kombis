@@ -1,0 +1,618 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Storyboard Video Promosi Cimory</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background: #f4f8ff;
+    color: #17396e;
+    padding: 16px;
+}
+
+.container {
+    max-width: 1500px;
+    margin: auto;
+    background: white;
+    padding: 16px;
+    border-radius: 18px;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 18px;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.logo {
+    color: #e52d4e;
+    font-size: 46px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    text-shadow: 2px 2px white, 3px 3px #17396e;
+    border-right: 2px solid #dce5f3;
+}
+
+.logo small {
+    display: block;
+    font-size: 10px;
+    color: #17396e;
+    text-shadow: none;
+}
+
+h1 {
+    font-size: clamp(24px, 3vw, 38px);
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 22px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.informasi {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.info {
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.info h3 {
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.info ul {
+    padding-left: 17px;
+}
+
+.biru { background: #e0efff; }
+.pink { background: #ffe6ec; }
+.kuning { background: #fff1d4; }
+.hijau { background: #e1f6e9; }
+
+.tagline {
+    text-align: center;
+    font-size: 19px;
+    font-weight: bold;
+    font-style: italic;
+    margin: 16px 0;
+}
+
+.storyboard {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.kartu {
+    border: 1px solid #d9e4f2;
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+}
+
+.judul-kartu {
+    background: #e5f1ff;
+    padding: 9px;
+    font-size: 13px;
+    font-weight: bold;
+    min-height: 40px;
+}
+
+.kartu:nth-child(3n+1) .judul-kartu {
+    background: #ffe5eb;
+}
+
+.kartu:nth-child(3n) .judul-kartu {
+    background: #e1f5e8;
+}
+
+.nomor {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid #d4ddea;
+    margin-right: 4px;
+}
+
+.waktu {
+    font-size: 10px;
+    font-weight: normal;
+}
+
+.foto {
+    height: 150px;
+    position: relative;
+    background: #eaf0f8;
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.caption {
+    position: absolute;
+    top: 8px;
+    right: 7px;
+    max-width: 50%;
+    padding: 6px;
+    border-radius: 7px;
+    background: #14243bc9;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+}
+
+.isi {
+    padding: 10px;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.isi p {
+    margin-bottom: 8px;
+}
+
+.isi b {
+    color: #17396e;
+}
+
+.bagian-bawah {
+    display: grid;
+    grid-template-columns: 1.1fr 1.3fr 1fr;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.panel {
+    border-radius: 13px;
+    padding: 12px;
+    border: 1px solid #e1e8f2;
+}
+
+.panel h2 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.anggota {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin: 0 auto 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f4d9ce;
+    border: 2px solid white;
+    font-size: 24px;
+}
+
+.anggota b {
+    display: block;
+}
+
+.aida {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+}
+
+.aida div {
+    padding: 12px 6px;
+    border-radius: 10px;
+    background: #ffe0e8;
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.aida div:nth-child(2) { background: #dcecff; }
+.aida div:nth-child(3) { background: #ddf3e5; }
+.aida div:nth-child(4) { background: #ffedbd; }
+
+.huruf {
+    display: block;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.pesan ul {
+    list-style: none;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.pesan li::before {
+    content: "✓ ";
+    color: #19805a;
+    font-weight: bold;
+}
+
+.footer {
+    text-align: center;
+    margin: 16px 0 5px;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+@media (max-width: 1100px) {
+    .storyboard {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .bagian-bawah {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .pesan {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 650px) {
+    body { padding: 6px; }
+
+    .container { padding: 10px; }
+
+    header {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .logo {
+        border-right: none;
+        border-bottom: 2px solid #dce5f3;
+        padding-bottom: 12px;
+    }
+
+    .informasi {
+        grid-template-columns: 1fr;
+    }
+
+    .storyboard {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .foto { height: 125px; }
+
+    .bagian-bawah {
+        grid-template-columns: 1fr;
+    }
+
+    .pesan { grid-column: auto; }
+
+    .aida {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .subtitle { font-size: 17px; }
+}
+
+@media print {
+    body { padding: 0; background: white; }
+    .container { box-shadow: none; }
+    .kartu, .panel { break-inside: avoid; }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+    <div class="logo">
+        Cimory
+        <small>FRESH MILK • YOGURT</small>
+    </div>
+
+    <div>
+        <h1>Storyboard Video Promosi</h1>
+        <div class="subtitle">
+            “Jalani Harimu, Temani Cimory” ♡
+        </div>
+    </div>
+</header>
+
+<div class="informasi">
+
+    <section class="info biru">
+        <h3>Anggota Kelompok (5 orang)</h3>
+        <ul>
+            <li>Susi (hijab)</li>
+            <li>Intan (hijab)</li>
+            <li>Nadya (hijab)</li>
+            <li>Grace (tidak hijab)</li>
+            <li>Nikita (tidak hijab)</li>
+        </ul>
+    </section>
+
+    <section class="info kuning">
+        <h3>Konsep</h3>
+        <ul>
+            <li>Fokus pada kegiatan setiap anggota.</li>
+            <li>Cimory menemani berbagai aktivitas.</li>
+            <li>Video seperti cerita sehari-hari mahasiswa.</li>
+        </ul>
+    </section>
+
+    <section class="info pink">
+        <h3>Durasi Estimasi</h3>
+        <p>± 2–3 menit</p>
+        <br>
+        <h3>Lokasi</h3>
+        <ul>
+            <li>Kampus</li>
+            <li>Perpustakaan</li>
+            <li>Kelas</li>
+            <li>Taman kampus</li>
+            <li>Area SP. 4</li>
+        </ul>
+    </section>
+
+</div>
+
+<div class="tagline">
+    Satu rasa, banyak cerita, sama-sama Cimory! ♡
+</div>
+
+<div class="storyboard">
+
+<article class="kartu">
+    <div class="judul-kartu">
+        <span class="nomor">1</span>
+        Susi – Ngerjain Tugas
+        <span class="waktu">(0:00–0:20)</span>
+    </div>
+    <div class="foto">
+        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=700&q=80" alt="Mengerjakan tugas">
+        <div class="caption">Tugas dulu,<br>baru Cimory!</div>
+    </div>
+    <div class="isi">
+        <p><b>Visual:</b> Susi mengerjakan tugas di perpustakaan atau kampus.</p>
+        <p><b>Shot:</b> Medium, close-up tangan, lalu produk.</p>
+        <p><b>Dialog/Narasi:</b> “Sambil ngerjain tugas, butuh yang bisa bikin semangat, nih. Cimory jadi pilihan pas banget!”</p>
+        <p><b>Teks di layar:</b> “Semangat kuliah, dengan Cimory!”</p>
+    </div>
+</article>
+
+<article class="kartu">
+    <div class="judul-kartu">
+        <span class="nomor">2</span>
+        Intan – Baca Buku
+        <span class="waktu">(0:20–0:40)</span>
+    </div>
+    <div class="foto">
+        <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=700&q=80" alt="Perpustakaan">
+        <div class="caption">Baca dulu,<br>Cimory kemudian ♡</div>
+    </div>
+    <div class="isi">
+        <p><b>Visual:</b> Intan membaca komik atau novel di pojok kampus.</p>
+        <p><b>Shot:</b> Medium, close-up buku dan produk.</p>
+        <p><b>Dialog/Narasi:</b> “Buku yang seru, ditemani Cimory biar makin nyaman dan nggak gampang ngantuk.”</p>
+        <p><b>Teks di layar:</b> “Baca lebih seru dengan Cimory.”</p>
+    </div>
+</article>
+
+<article class="kartu">
+    <div class="judul-kartu">
+        <span class="nomor">3</span>
+        Grace – Nonton Film
+        <span class="waktu">(0:40–1:00)</span>
+    </div>
+    <div class="foto">
+        <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=80" alt="Waktu santai">
+        <div class="caption">Film favorit + Cimory<br>= mood naik!</div>
+    </div>
+    <div class="isi">
+        <p><b>Visual:</b> Grace menonton film sambil minum Cimory.</p>
+        <p><b>Shot:</b> Medium, close-up ekspresi dan produk.</p>
+        <p><b>Dialog/Narasi:</b> “Film jadi lebih seru, apalagi kalau ada Cimory. Rasanya enak, bikin makin betah nonton!”</p>
+        <p><b>Teks di layar:</b> “Teman nonton, teman seru!”</p>
+    </div>
+</article>
+
+<article class="kartu">
+    <div class="judul-kartu">
+        <span class="nomor">4</span>
+        Nadya – Waktu Santai
+        <span class="waktu">(1:00–1:20)</span>
+    </div>
+    <div class="foto">
+        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=700&q=80" alt="Menikmati waktu santai">
+        <div class="caption">Stay chill<br>with Cimory ♡</div>
+    </div>
+    <div class="isi">
+        <p><b>Visual:</b> Nadya menonton drama atau YouTube sambil menikmati waktu santai.</p>
+        <p><b>Shot:</b> Medium, close-up, suasana santai.</p>
+        <p><b>Dialog/Narasi:</b> “Kalau lagi nonton, jangan lupa Cimory. Bikin momen santai jadi lebih menyenangkan.”</p>
+        <p><b>Teks di layar:</b> “Santai nontonnya, enak minumnya!”</p>
+    </div>
+</article>
+
+<article class="kartu">
+    <div class="judul-kartu">
+        <span class="nomor">5</span>
+        Nikita – Main Game
+        <span class="waktu">(1:20–1:40)</span>
+    </div>
+    <div class="foto">
+        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=700&q=80" alt="Bermain game">
+        <div class="caption">Level up<br>dengan Cimory!</div>
+    </div>
+    <div class="isi">
+        <p><b>Visual:</b> Nikita bermain game menggunakan ponsel.</p>
+        <p><b>Shot:</b> Close-up wajah, tangan memegang ponsel, lalu produk.</p>
+        <p><b>Dialog/Narasi:</b> “Main game makin seru kalau ada Cimory. Rasanya enak banget!”</p>
+        <p><b>Teks di layar:</b> “Main lebih seru, dengan Cimory!”</p>
+    </div>
+</article>
+
+<article class="kartu">
+    <div class="judul-kartu">
+        <span class="nomor">6</span>
+        Perjalanan Menuju SP. 4
+        <span class="waktu">(1:40–2:10)</span>
+    </div>
+    <div class="foto">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=700&q=80" alt="Teman berjalan bersama">
+        <div class="caption">Jalur berbeda,<br>tujuan yang sama ♡</div>
+    </div>
+    <div class="isi">
+        <p><b>Visual:</b> Kelima anggota berjalan dari arah berbeda menuju SP. 4.</p>
+        <p><b>Shot:</b> Long shot, masing-masing berjalan.</p>
+        <p><b>Dialog/Narasi:</b><br>
+        Susi: “Akhirnya selesai juga!”<br>
+        Intan: “Laper juga ya.”<br>
+        Grace: “Eh, udah lama nggak ketemu!”<br>
+        Nadya: “Yuk, cepetan!”<br>
+        Nikita: “Ayo, kita ketemu di SP. 4!”</p>
+        <p><b>Teks di layar:</b> “Jalur berbeda, tujuan yang sama.”</p>
+    </div>
+</article>
+
+<article class="kartu">
+    <div class="judul-kartu">
+        <span class="nomor">7</span>
+        Bertemu di SP. 4
+        <span class="waktu">(2:10–2:30)</span>
+    </div>
+    <div class="foto">
+        <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=700&q=80" alt="Berkumpul bersama teman">
+        <div class="caption">Ketemu lagi<br>di SP. 4!</div>
+    </div>
+    <div class="isi">
+        <p><b>Visual:</b> Kelima anggota bertemu di area kampus dan saling menyapa.</p>
+        <p><b>Shot:</b> Medium group shot.</p>
+        <p><b>Dialog/Narasi:</b> “Eh, akhirnya ketemu juga! Ayo minum dulu!” (semua tertawa).</p>
+        <p><b>Teks di layar:</b> “Teman baik, selalu ada di setiap langkah.”</p>
+    </div>
+</article>
+
+<article class="kartu">
+    <div class="judul-kartu">
+        <span class="nomor">8</span>
+        Ngumpul & Cerita
+        <span class="waktu">(2:30–2:50)</span>
+    </div>
+    <div class="foto">
+        <img src="https://images.unsplash.com/photo-1527529408682-876a6a6f1f8b?auto=format&fit=crop&w=700&q=80" alt="Teman berbincang">
+        <div class="caption">Beda kegiatan,<br>satu kesegaran!</div>
+    </div>
+    <div class="isi">
+        <p><b>Visual:</b> Kelima anggota duduk bersama, minum Cimory sambil bercerita.</p>
+        <p><b>Shot:</b> Medium, close-up produk.</p>
+        <p><b>Dialog/Narasi:</b><br>
+        Intan: “Tadi aku baca buku, seru banget!”<br>
+        Susi: “Aku ngerjain tugas, capek tapi worth it.”<br>
+        Grace: “Aku nonton film, chill banget.”<br>
+        Nadya: “Aku juga nonton, seru parah!”<br>
+        Nikita: “Aku main game, menang terus!”<br>
+        (Semua tertawa.)</p>
+        <p><b>Teks di layar:</b> “Berbeda kegiatan, satu kesegaran.”</p>
+    </div>
+</article>
+
+<article class="kartu">
+    <div class="judul-kartu">
+        <span class="nomor">9</span>
+        Closing / Iklan
+        <span class="waktu">(2:50–3:00)</span>
+    </div>
+    <div class="foto">
+        <img src="https://images.unsplash.com/photo-1543255006-d6395b6f1171?auto=format&fit=crop&w=700&q=80" alt="Minuman segar">
+        <div class="caption">Cimory<br>Rasa yang selalu menemani ♡</div>
+    </div>
+    <div class="isi">
+        <p><b>Visual:</b> Close-up produk dan berbagai varian Cimory dengan latar cerah.</p>
+        <p><b>Teks di layar:</b> “Cimory — Rasa yang selalu menemani.”</p>
+        <p><b>Jingle/Voice Over:</b> “Cimory, teman segar di setiap aktivitas!”</p>
+    </div>
+</article>
+
+</div>
+
+<div class="bagian-bawah">
+
+<section class="panel biru">
+    <h2>Pembagian Peran</h2>
+    <div class="anggota">
+        <div><div class="avatar">👩🏻</div><b>Susi</b>(Hijab)<br>Pembuka</div>
+        <div><div class="avatar">👩🏻</div><b>Intan</b>(Hijab)<br>Interest</div>
+        <div><div class="avatar">👩🏻</div><b>Nadya</b>(Hijab)<br>Desire</div>
+        <div><div class="avatar">👩🏻</div><b>Grace</b><br>Demonstrasi</div>
+        <div><div class="avatar">👩🏻</div><b>Nikita</b><br>Action</div>
+    </div>
+</section>
+
+<section class="panel kuning">
+    <h2>Alur AIDA dalam Video</h2>
+    <div class="aida">
+        <div><span class="huruf">A</span><b>Attention</b><br>Pembukaan yang menarik perhatian.</div>
+        <div><span class="huruf">I</span><b>Interest</b><br>Mengenalkan Cimory dalam aktivitas.</div>
+        <div><span class="huruf">D</span><b>Desire</b><br>Menunjukkan manfaat dan kesegaran produk.</div>
+        <div><span class="huruf">A</span><b>Action</b><br>Mengajak penonton mencoba produk.</div>
+    </div>
+</section>
+
+<section class="panel pink pesan">
+    <h2>Pesan Utama</h2>
+    <ul>
+        <li>Cimory adalah minuman praktis dan menyegarkan.</li>
+        <li>Cocok menemani berbagai aktivitas.</li>
+        <li>Tersedia dalam berbagai varian rasa.</li>
+        <li>Dapat dinikmati kapan saja dan di mana saja.</li>
+        <li>Yuk, pilih varian favoritmu dan rasakan kesegarannya!</li>
+    </ul>
+</section>
+
+</div>
+
+<div class="footer">
+    ♡ Cimory — Teman Segar di Setiap Aktivitas! ♡
+</div>
+
+</div>
+</body>
+</html>
