@@ -13,6 +13,7 @@
     padding: 0;
 }
 
+
 body {
     font-family: "Trebuchet MS", Arial, sans-serif;
     background: #f4f8ff;
@@ -37,20 +38,19 @@ header {
 }
 
 .logo {
-    color: #e52d4e;
-    font-size: 46px;
-    font-weight: bold;
-    font-style: italic;
-    text-align: center;
-    text-shadow: 2px 2px white, 3px 3px #17396e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-right: 2px solid #dce5f3;
+    padding: 10px;
 }
 
-.logo small {
+.logo img {
+    width: 100%;
+    max-width: 160px;
+    height: 100px;
+    object-fit: contain;
     display: block;
-    font-size: 10px;
-    color: #17396e;
-    text-shadow: none;
 }
 
 h1 {
@@ -343,12 +343,14 @@ h1 {
 
 <header>
     <div class="logo">
-        Cimory
-        <small>FRESH MILK • YOGURT</small>
-    </div>
+    <img
+        src="https://i.pinimg.com/1200x/05/b6/30/05b63067c41aa5eeb79b5a7a6ee37af3.jpg"
+        alt="Logo Cimory"
+    >
+</div>
 
     <div>
-        <h1>Storyboard Video Promosi</h1>
+        <h1>Storyboard Video Promosi Susu Cimory</h1>
         <div class="subtitle">
             “Jalani Harimu, Temani Cimory” ♡
         </div>
@@ -360,11 +362,11 @@ h1 {
     <section class="info biru">
         <h3>Anggota Kelompok (5 orang)</h3>
         <ul>
-            <li>Susi (hijab)</li>
-            <li>Intan (hijab)</li>
-            <li>Nadya (hijab)</li>
-            <li>Grace (tidak hijab)</li>
-            <li>Nikita (tidak hijab)</li>
+            <li>Susilawati</li>
+            <li>Intania Putri</li>
+            <li>Grace Divka Nainggolan</li>
+            <li>Nadya Amalia</li>
+            <li>Nikita Simarmata</li>
         </ul>
     </section>
 
@@ -384,10 +386,8 @@ h1 {
         <h3>Lokasi</h3>
         <ul>
             <li>Kampus</li>
-            <li>Perpustakaan</li>
             <li>Kelas</li>
             <li>Taman kampus</li>
-            <li>Area SP. 4</li>
         </ul>
     </section>
 
